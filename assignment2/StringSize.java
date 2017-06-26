@@ -13,13 +13,13 @@ public class StringSize {
 		calculateLength();
 	}
 	
-	public void calculateLength()
+	public void calculateLength1()
 	{
 		String S2 ;
 		
 		int length = S1.length();
 		int number = 0;
-		while(length >0){
+		while(length/10 >0){
 			length = length/10;
 			number++;
 		}
@@ -30,6 +30,40 @@ public class StringSize {
 		
 	}
 	
+	public void calculateLength()
+	{
+		int length = S1.length();
+		
+		int number = 0;
+		
+		double i=0;
+		
+		String temp;
+
+		double num;
+		
+		int count=0;
+		
+		for(int j=length-1;j>=0;j--)
+		{
+			temp = ""+S1.charAt(j);
+			
+			num = Double.parseDouble(temp);
+			
+			number = (int) (number+ (num * Math.pow(10,i)));
+			
+			i++;
+			
+			if(length - number > 0)
+				count++;
+			if(length - number < 0)
+				break;
+		}
+		
+		String S2 = S1.substring(0, length-count);
+		System.out.println("The trimmed String is:" + S2);
+		
+	}
 	
 	
 	public static void main(String[] args) {
