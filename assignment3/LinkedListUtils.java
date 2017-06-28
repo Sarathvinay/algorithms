@@ -25,6 +25,12 @@ public class LinkedListUtils {
 	{
 		ListNode current;
 		current = head.next;
+		
+		if(current == null || current.next ==null)
+		{
+			return;
+		}
+		
 		int count=0;
 		System.out.println("The elements are: ");
 		while(current != null && count<=8)
